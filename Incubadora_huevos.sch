@@ -11522,12 +11522,12 @@ BT138_SERIES_2.pdf</description>
 <attribute name="NAME" x="11.43" y="77.6986" size="1.778" layer="95"/>
 <attribute name="VALUE" x="8.89" y="72.898" size="1.778" layer="96"/>
 </instance>
-<instance part="VDC" gate="-1" x="12.7" y="33.02" smashed="yes">
-<attribute name="NAME" x="11.43" y="33.909" size="1.778" layer="95" rot="R180"/>
-</instance>
-<instance part="VDC" gate="-2" x="12.7" y="25.4" smashed="yes">
+<instance part="VDC" gate="-1" x="12.7" y="25.4" smashed="yes">
 <attribute name="NAME" x="11.43" y="26.289" size="1.778" layer="95" rot="R180"/>
-<attribute name="VALUE" x="8.89" y="21.717" size="1.778" layer="96"/>
+</instance>
+<instance part="VDC" gate="-2" x="12.7" y="33.02" smashed="yes">
+<attribute name="NAME" x="11.43" y="33.909" size="1.778" layer="95" rot="R180"/>
+<attribute name="VALUE" x="8.89" y="29.337" size="1.778" layer="96"/>
 </instance>
 <instance part="D1" gate="G$1" x="20.32" y="68.58" smashed="yes" rot="R90">
 <attribute name="NAME" x="21.082" y="70.485" size="1.778" layer="95"/>
@@ -11771,10 +11771,10 @@ BT138_SERIES_2.pdf</description>
 <wire x1="35.56" y1="20.32" x2="35.56" y2="22.86" width="0.1524" layer="91"/>
 </segment>
 <segment>
-<pinref part="VDC" gate="-2" pin="KL"/>
 <pinref part="GND3" gate="1" pin="GND"/>
-<wire x1="17.78" y1="25.4" x2="20.32" y2="25.4" width="0.1524" layer="91"/>
 <wire x1="20.32" y1="25.4" x2="20.32" y2="20.32" width="0.1524" layer="91"/>
+<pinref part="VDC" gate="-1" pin="KL"/>
+<wire x1="17.78" y1="25.4" x2="20.32" y2="25.4" width="0.1524" layer="91"/>
 </segment>
 <segment>
 <pinref part="Q1" gate="1" pin="E"/>
@@ -11836,11 +11836,11 @@ BT138_SERIES_2.pdf</description>
 <segment>
 <pinref part="P+4" gate="1" pin="+5V"/>
 <wire x1="20.32" y1="35.56" x2="20.32" y2="33.02" width="0.1524" layer="91"/>
-<pinref part="VDC" gate="-1" pin="KL"/>
-<wire x1="20.32" y1="33.02" x2="17.78" y2="33.02" width="0.1524" layer="91"/>
 <pinref part="R1" gate="G$1" pin="1"/>
 <wire x1="22.86" y1="33.02" x2="20.32" y2="33.02" width="0.1524" layer="91"/>
 <junction x="20.32" y="33.02"/>
+<pinref part="VDC" gate="-2" pin="KL"/>
+<wire x1="17.78" y1="33.02" x2="20.32" y2="33.02" width="0.1524" layer="91"/>
 </segment>
 <segment>
 <pinref part="P+8" gate="1" pin="+5V"/>
