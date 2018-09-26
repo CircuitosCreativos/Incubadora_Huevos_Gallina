@@ -6,7 +6,7 @@
 <setting alwaysvectorfont="yes"/>
 <setting verticaltext="up"/>
 </settings>
-<grid distance="0.1" unitdist="inch" unit="inch" style="lines" multiple="1" display="yes" altdistance="0.01" altunitdist="inch" altunit="inch"/>
+<grid distance="0.1" unitdist="inch" unit="inch" style="lines" multiple="1" display="no" altdistance="0.01" altunitdist="inch" altunit="inch"/>
 <layers>
 <layer number="1" name="Top" color="4" fill="1" visible="no" active="no"/>
 <layer number="2" name="Route2" color="1" fill="3" visible="no" active="no"/>
@@ -12128,11 +12128,6 @@ BT138_SERIES_2.pdf</description>
 </net>
 <net name="LINEA" class="0">
 <segment>
-<pinref part="VAC" gate="-1" pin="KL"/>
-<wire x1="60.96" y1="30.48" x2="63.5" y2="30.48" width="0.1524" layer="91"/>
-<label x="63.5" y="30.48" size="1.778" layer="95" ratio="10" xref="yes"/>
-</segment>
-<segment>
 <pinref part="R5" gate="G$1" pin="2"/>
 <pinref part="T1" gate="G$1" pin="A2"/>
 <wire x1="144.78" y1="152.4" x2="147.32" y2="152.4" width="0.1524" layer="91"/>
@@ -12171,13 +12166,13 @@ BT138_SERIES_2.pdf</description>
 <wire x1="144.78" y1="114.3" x2="147.32" y2="114.3" width="0.1524" layer="91"/>
 <label x="147.32" y="114.3" size="1.778" layer="95" ratio="10" xref="yes"/>
 </segment>
-</net>
-<net name="NEUTR" class="0">
 <segment>
 <pinref part="VAC" gate="-2" pin="KL"/>
 <wire x1="60.96" y1="22.86" x2="63.5" y2="22.86" width="0.1524" layer="91"/>
 <label x="63.5" y="22.86" size="1.778" layer="95" ratio="10" xref="yes"/>
 </segment>
+</net>
+<net name="NEUTR" class="0">
 <segment>
 <pinref part="BOM1" gate="-2" pin="KL"/>
 <wire x1="175.26" y1="109.22" x2="172.72" y2="109.22" width="0.1524" layer="91"/>
@@ -12227,6 +12222,11 @@ BT138_SERIES_2.pdf</description>
 <pinref part="MOT4" gate="-1" pin="KL"/>
 <wire x1="236.22" y1="78.74" x2="233.68" y2="78.74" width="0.1524" layer="91"/>
 <label x="233.68" y="78.74" size="1.778" layer="95" ratio="10" rot="R180" xref="yes"/>
+</segment>
+<segment>
+<pinref part="VAC" gate="-1" pin="KL"/>
+<wire x1="60.96" y1="30.48" x2="63.5" y2="30.48" width="0.1524" layer="91"/>
+<label x="63.5" y="30.48" size="1.778" layer="95" ratio="10" xref="yes"/>
 </segment>
 </net>
 <net name="N$7" class="0">
@@ -12391,6 +12391,31 @@ BT138_SERIES_2.pdf</description>
 </nets>
 </sheet>
 </sheets>
+<errors>
+<approved hash="101,1,81.28,60.96,JP1,1,,,,"/>
+<approved hash="101,1,83.82,60.96,JP1,2,,,,"/>
+<approved hash="101,1,81.28,45.72,JP2,1,,,,"/>
+<approved hash="101,1,83.82,45.72,JP2,2,,,,"/>
+<approved hash="102,1,134.62,38.1,VDD,+5V,,,,"/>
+<approved hash="102,1,137.16,38.1,VSS,GND,,,,"/>
+<approved hash="104,1,17.78,134.62,MOD1,GND.1,GND,,,"/>
+<approved hash="104,1,53.34,134.62,MOD1,VCC,+5V,,,"/>
+<approved hash="104,1,63.5,71.12,U1,VCC,+3V3,,,"/>
+<approved hash="113,1,83.0923,63.1613,JP1,,,,,"/>
+<approved hash="113,1,83.0923,47.9213,JP2,,,,,"/>
+<approved hash="113,1,12.3748,25.4,VDC,,,,,"/>
+<approved hash="113,1,55.5548,30.48,VAC,,,,,"/>
+<approved hash="113,1,181.484,114.3,BOM1,,,,,"/>
+<approved hash="113,1,181.484,104.14,BOM2,,,,,"/>
+<approved hash="113,1,181.484,93.98,BOM3,,,,,"/>
+<approved hash="113,1,211.964,114.3,BOM4,,,,,"/>
+<approved hash="113,1,211.964,104.14,BOM5,,,,,"/>
+<approved hash="113,1,211.964,93.98,BOM6,,,,,"/>
+<approved hash="113,1,242.444,109.22,MOT1,,,,,"/>
+<approved hash="113,1,242.444,99.06,MOT2,,,,,"/>
+<approved hash="113,1,242.444,88.9,MOT3,,,,,"/>
+<approved hash="113,1,242.444,78.74,MOT4,,,,,"/>
+</errors>
 </schematic>
 </drawing>
 </eagle>
