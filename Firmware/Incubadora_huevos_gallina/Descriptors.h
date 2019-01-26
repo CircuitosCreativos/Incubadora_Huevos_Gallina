@@ -17,6 +17,9 @@
 #define MOT       10
 #define BOM       11
 
+//Pin datos sensor DS18B20
+#define WIRE_BUS  18
+
 //parametros constantes
 #define TEMP_MAX  38.2
 #define TEMP_MIN  37.2

@@ -8,7 +8,7 @@ void mostrar_temp(uint8_t columna, uint8_t fila, float temp) {
 }
 //-----------------------------------------------------------------
 
-void mostrar_hum(uint8_t columna, uint8_t fila, float hum) {
+void mostrar_hum(uint8_t columna, uint8_t fila, String hum) {
   lcd.setCursor(columna, fila);
   lcd.print("Hum=");
   lcd.print(hum);
