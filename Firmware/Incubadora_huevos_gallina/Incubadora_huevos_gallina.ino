@@ -62,26 +62,33 @@ void setup() {
 void loop() {
   // ponemos el MCU en modo sleep por 2 segundos para ahorrar consumo de energia
   LowPower.powerDown(SLEEP_2S, ADC_OFF, BOD_OFF);
-
-  //Condicion para verificar si el sensor esta conectado
-  ds18b20.requestTemperatures(); //Prepara el sensor para la lectura
-  //mostrar_error(2, 0);
+  ds18b20.requestTemperatures();
 
   //Realizamos las mediciones de temperatura y humedad
   temp = ds18b20.getTempCByIndex(0);  //leemos la temperatura
   delayMicroseconds(100);
 
+  //Condicion para verificar si el sensor esta conectado
+  while (temp<-40.0) {
+    digitalWrite(MOT, LOW);
+    digitalWrite(BOM, LOW);
+    mostrar_error(2, 0);
+    ds18b20.requestTemperatures();
+    temp = ds18b20.getTempCByIndex(0);  //leemos la temperatura
+    delay(1000);
+  }
+  
   //Visualizamos los datos en la LCD
-  mostrar_temp(1 , 0, temp);
+  mostrar_temp(2 , 0, temp);
   mostrar_hum(1, 1, hum);
 
   //Comparaciones de temperatura
   if (temp < TEMP_MIN) {
-  digitalWrite(MOT, HIGH);
+    digitalWrite(MOT, HIGH);
     digitalWrite(BOM, HIGH);
   }
   else if (temp > TEMP_MAX) {
-  digitalWrite(MOT, LOW);
+    digitalWrite(MOT, LOW);
     digitalWrite(BOM, LOW);
   }
 }
