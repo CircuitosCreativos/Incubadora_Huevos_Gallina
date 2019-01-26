@@ -6,7 +6,7 @@
 <setting alwaysvectorfont="yes"/>
 <setting verticaltext="up"/>
 </settings>
-<grid distance="0.1" unitdist="inch" unit="inch" style="lines" multiple="1" display="yes" altdistance="0.01" altunitdist="inch" altunit="inch"/>
+<grid distance="0.1" unitdist="inch" unit="inch" style="lines" multiple="1" display="no" altdistance="0.01" altunitdist="inch" altunit="inch"/>
 <layers>
 <layer number="1" name="Top" color="4" fill="1" visible="no" active="no"/>
 <layer number="2" name="Route2" color="1" fill="3" visible="no" active="no"/>
@@ -11376,6 +11376,10 @@ grid 2.54 mm</description>
 <part name="R6" library="rcl" deviceset="R-US_" device="0204/7" value="1k"/>
 <part name="P+11" library="supply1" deviceset="+5V" device=""/>
 <part name="GND12" library="supply1" deviceset="GND" device=""/>
+<part name="R7" library="rcl" deviceset="R-US_" device="0204/7" value="4k7"/>
+<part name="R8" library="rcl" deviceset="R-US_" device="0204/7" value="4k7"/>
+<part name="+3V2" library="supply1" deviceset="+3V3" device=""/>
+<part name="+3V4" library="supply1" deviceset="+3V3" device=""/>
 </parts>
 <sheets>
 <sheet>
@@ -11679,6 +11683,20 @@ grid 2.54 mm</description>
 <instance part="GND12" gate="1" x="132.08" y="76.2" smashed="yes">
 <attribute name="VALUE" x="129.54" y="73.66" size="1.778" layer="96"/>
 </instance>
+<instance part="R7" gate="G$1" x="177.8" y="53.34" smashed="yes" rot="R270">
+<attribute name="NAME" x="179.07" y="54.8386" size="1.778" layer="95"/>
+<attribute name="VALUE" x="179.07" y="52.578" size="1.778" layer="96"/>
+</instance>
+<instance part="R8" gate="G$1" x="185.42" y="53.34" smashed="yes" rot="R270">
+<attribute name="NAME" x="186.69" y="54.8386" size="1.778" layer="95"/>
+<attribute name="VALUE" x="186.69" y="52.578" size="1.778" layer="96"/>
+</instance>
+<instance part="+3V2" gate="G$1" x="177.8" y="63.5" smashed="yes">
+<attribute name="VALUE" x="180.34" y="66.04" size="1.778" layer="96" rot="R180"/>
+</instance>
+<instance part="+3V4" gate="G$1" x="185.42" y="63.5" smashed="yes">
+<attribute name="VALUE" x="187.96" y="66.04" size="1.778" layer="96" rot="R180"/>
+</instance>
 </instances>
 <busses>
 </busses>
@@ -11960,6 +11978,16 @@ grid 2.54 mm</description>
 <wire x1="27.94" y1="73.66" x2="27.94" y2="76.2" width="0.1524" layer="91"/>
 <wire x1="27.94" y1="76.2" x2="20.32" y2="76.2" width="0.1524" layer="91"/>
 </segment>
+<segment>
+<pinref part="R7" gate="G$1" pin="1"/>
+<pinref part="+3V2" gate="G$1" pin="+3V3"/>
+<wire x1="177.8" y1="58.42" x2="177.8" y2="60.96" width="0.1524" layer="91"/>
+</segment>
+<segment>
+<pinref part="R8" gate="G$1" pin="1"/>
+<pinref part="+3V4" gate="G$1" pin="+3V3"/>
+<wire x1="185.42" y1="58.42" x2="185.42" y2="60.96" width="0.1524" layer="91"/>
+</segment>
 </net>
 <net name="SCL" class="0">
 <segment>
@@ -11972,6 +12000,11 @@ grid 2.54 mm</description>
 <wire x1="53.34" y1="149.86" x2="55.88" y2="149.86" width="0.1524" layer="91"/>
 <label x="55.88" y="149.86" size="1.27" layer="95" ratio="10" xref="yes"/>
 </segment>
+<segment>
+<pinref part="R8" gate="G$1" pin="2"/>
+<wire x1="185.42" y1="48.26" x2="185.42" y2="45.72" width="0.1524" layer="91"/>
+<label x="185.42" y="45.72" size="1.27" layer="95" ratio="10" rot="R270" xref="yes"/>
+</segment>
 </net>
 <net name="SDA" class="0">
 <segment>
@@ -11983,6 +12016,11 @@ grid 2.54 mm</description>
 <pinref part="MOD1" gate="G$1" pin="A4"/>
 <wire x1="53.34" y1="147.32" x2="55.88" y2="147.32" width="0.1524" layer="91"/>
 <label x="55.88" y="147.32" size="1.27" layer="95" ratio="10" xref="yes"/>
+</segment>
+<segment>
+<pinref part="R7" gate="G$1" pin="2"/>
+<wire x1="177.8" y1="48.26" x2="177.8" y2="45.72" width="0.1524" layer="91"/>
+<label x="177.8" y="45.72" size="1.27" layer="95" ratio="10" rot="R270" xref="yes"/>
 </segment>
 </net>
 <net name="INT" class="0">
